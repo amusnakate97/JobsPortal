@@ -1,0 +1,282 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafe Rating Prediction</title>
+
+
+    <!-- BootStrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+
+    <!-- css -->
+    <link rel="stylesheet" href="static/css/styles.css">
+
+
+</head>
+
+<body>
+
+    <!-- As a heading -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">Check Job Authenticity</a>
+            </div>
+        </div>
+    </nav>
+
+    <br><br><br>
+
+
+    <div class="container">
+
+
+
+        <form action="\predict" method="post">
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <!-- Source -->
+                            <h5 class="card-title">Enter the details</h5>
+                            <p>Salary range given?</p>
+                            <input type="radio" id="yes" name="salary" value="yes">
+                            <label for="yes">Yes</label><br>
+                            <input type="radio" id="no" name="salary" value="no">
+                            <label for="no">No</label><br>
+
+                            <p>Work from home allowed?</p>
+                            <input type="radio" id="y" name="wfh" value="yes">
+                            <label for="y">Yes</label><br>
+                            <input type="radio" id="n" name="wfh" value="no">
+                            <label for="n">No</label><br>
+
+                            <p>Logo Present?</p>
+                            <input type="radio" id="logo_yes" name="logo" value="yes">
+                            <label for="logo_yes">Yes</label><br>
+                            <input type="radio" id="logo_no" name="logo" value="no">
+                            <label for="logo_no">No</label><br>
+
+
+                            <p>Questions Present?</p>
+                            <input type="radio" id="q_yes" name="question" value="yes">
+                            <label for="q_yes">Yes</label><br>
+                            <input type="radio" id="q_no" name="question" value="no">
+                            <label for="q_no">No</label><br>
+
+                            <p>Company Profile Present?</p>
+                            <input type="radio" id="profile_yes" name="profile" value="yes">
+                            <label for="profile_yes">Yes</label><br>
+                            <input type="radio" id="profile_no" name="profile" value="no">
+                            <label for="profile_no">No</label><br>
+
+                            <p>Requirements given?</p>
+                            <input type="radio" id="req_yes" name="req" value="yes">
+                            <label for="req_yes">Yes</label><br>
+                            <input type="radio" id="req_no" name="req" value="no">
+                            <label for="req_no">No</label><br>
+
+                            <p>Does Company provide Benefits to employees?</p>
+                            <input type="radio" id="benefit_yes" name="benefits" value="yes">
+                            <label for="benefit_yes">Yes</label><br>
+                            <input type="radio" id="benefit_no" name="benefits" value="no">
+                            <label for="benefit_no">No</label><br>
+
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                           <h5 class="card-title">City</h5>
+                            <!-- Destination -->
+                            <select name="country" id="country" required="required">
+                                <option value="USA">USA</option>
+                                <option value="UK">UK</option>
+                                <option value="Greece">Greece</option>
+                                <option value="Canada">Canada</option>
+                                <option value="Germany">Germany</option>
+                                <option value="Not Given">Not given</option>
+                                <option value="New Zealand">New Zealand</option>
+                                <option value="India">India</option>
+                                <option value="Australia">Australia</option>
+                                <option value="Philippines">Philippines</option>
+                                <option value="Other">Other</option>
+
+                            </select>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+
+
+
+                             <h5 class="card-title">Department</h5>
+                            <select name="dept" id="dept" required="required">
+                                <option value="not given">Not Given</option>
+                                <option value="Sales">Sales</option>
+                                <option value="Engineering">Engineering</option>
+                                <option value="Marketing">Marketing</option>
+                                <option value="Operations">Operations</option>
+                                <option value="IT">IT</option>
+                                <option value="Development">Development</option>
+                                <option value="Product">Product</option>
+                                <option value="Information Technology">Information Technology</option>
+                                <option value="Design">Design</option>
+                                <option value="Other">Other</option>
+
+                            </select>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+
+                            <h5 class="card-title">Qualifications</h5>
+                            <select name="qualification" id="qualification" required="required">
+                                <option value="not given">Not Given</option>
+                                <option value="Bachelor's Degree">Bachelor's Degree</option>
+                                <option value="High School or equivalent">High School or equivalent</option>
+                                <option value="Master's Degree">Master's Degree</option>
+                                <option value="Associate Degree">Associate Degree	</option>
+                                <option value="Other">Other</option>
+
+                            </select>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+
+                            <h5 class="card-title">Industry</h5>
+                            <select name="industry" id="industry" required="required">
+                                <option value="not given">Not Given</option>
+                                <option value="Information Technology and Services">Information Technology and Services</option>
+                                <option value="Computer Software">Computer Software</option>
+                                <option value="Internet">Internet</option>
+                                <option value="Marketing and Advertising">Marketing and Advertising</option>
+                                <option value="Education Management">Education Management</option>
+                                <option value="Financial Services">Financial Services</option>
+                                <option value="Hospital & Health Care">Hospital & Health Care</option>
+                                <option value="Consumer Services">Consumer Services</option>
+                                <option value="Telecommunications">Telecommunications</option>
+                                <option value="Other">Other</option>
+
+                            </select>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+
+                            <h5 class="card-title">Function</h5>
+                            <select name="function" id="function" required="required">
+                                <option value="not given">Not Given</option>
+                                <option value="Information Technology">Information Technology</option>
+                                <option value="Sales">Sales</option>
+                                <option value="Engineering">Engineering</option>
+                                <option value="Customer Service">Customer Service</option>
+                                <option value="Marketing">Marketing</option>
+                                <option value="Administrative">Administrative</option>
+                                <option value="Design">Design</option>
+                                <option value="Health Care Provider">Health Care Provider</option>
+                                <option value="Education">Education</option>
+                                <option value="Other">Other</option>
+
+                            </select>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+
+
+
+                            <h5 class="card-title">Required Experience</h5>
+                            <select name="experience" id="experience" required="required">
+                                <option value="not given">Not Given</option>
+                                <option value="Director">Director</option>
+                                <option value="Entry level">Entry level</option>
+                                <option value="Executive">Executive</option>
+                                <option value="Internship">Internship</option>
+                                <option value="Mid-Senior level">Mid-Senior level</option>
+                                <option value="Not Applicable">Not Applicable</option>
+                                <option value="Other">Other</option>
+
+                            </select>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+
+                            <h5 class="card-title">Employment Type:</h5>
+                            <select name="emp_type" id="emp_type" required="required">
+                                <option value="Full-time">Full-time</option>
+                                <option value="Other">Other</option>
+                                <option value="Part-time">Part-time</option>
+                                <option value="Temporary">Temporary</option>
+                                <option value="not given">Not Given</option>
+
+
+                            </select>
+
+
+
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <br>
+            <br>
+            <br>
+
+            
+
+
+            <br>
+            <br>
+            <br>
+            <!-- Submit -->
+            <input type="submit" value="Submit" class="btn btn-secondary">
+        </form>
+
+        <br>
+        <br>
+        {% if flag %}
+        <h3>{{ prediction_texts }}</h3>
+        <img src="{{url_for('static', filename='fraud.jpg')}}" />
+        {% else %}
+        <h3>{{ prediction_texts }}</h3>
+        <img src="{{url_for('static', filename='real.jpg')}}" />
+        {% endif %}
+        <br>
+        <br>
+
+    </div>
+
+
+
+
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

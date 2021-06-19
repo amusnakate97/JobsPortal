@@ -1,0 +1,214 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Startup Success Prediction</title>
+
+
+    <!-- BootStrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+
+    <!-- css -->
+    <link rel="stylesheet" href="static/css/styles.css">
+
+
+</head>
+
+<body>
+
+    <!-- As a heading -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">Check Success of Startup</a>
+            </div>
+        </div>
+    </nav>
+
+    <br><br><br>
+
+
+    <div class="container">
+
+
+
+        <form action="\startup_success" method="post">
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <!-- Source -->
+                            <h5 class="card-title">Enter the details</h5>
+                            <p>City</p>
+                            <input type="text" name="city">
+
+                            <p>Foundation Year</p>
+                            <input type="number" name="foundation">
+
+                            <p>First Funding Year(age)</p>
+                            <input type="number" name="fund1">
+
+                            <p>Last Funding Year(age)</p>
+                            <input type="number" name="fund2">
+
+                            <p>First milestone Year(age)</p>
+                            <input type="number" name="milestone1">
+
+                            <p>Last milestone Year(age)</p>
+                            <input type="number" name="milestone2">
+
+                            <p>How many investors?</p>
+                            <input type="number" name="investors">
+
+                            <p>How many funding rounds?</p>
+                            <input type="number" name="rounds">
+
+                            <p>Total funding</p>
+                            <input type="number" name="funding">
+
+                            <p>Total milestones</p>
+                            <input type="number" name="milestones">
+
+                            <p>Total participants</p>
+                            <input type="number" name="participants">
+
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <p>Has VC?</p>
+                            <input type="radio" id="yes" name="vc" value="yes">
+                            <label for="yes">Yes</label><br>
+                            <input type="radio" id="no" name="vc" value="no">
+                            <label for="no">No</label><br>
+
+                            <br>
+                            <br>
+
+                            <p>Has angel investor?</p>
+                            <input type="radio" id="y" name="angel" value="yes">
+                            <label for="y">Yes</label><br>
+                            <input type="radio" id="n" name="angel" value="no">
+                            <label for="n">No</label><br>
+
+                             <br>
+                            <br>
+
+                            <p>In top 500?</p>
+                            <input type="radio" id="top_yes" name="top" value="yes">
+                            <label for="top_yes">Yes</label><br>
+                            <input type="radio" id="top_no" name="top" value="no">
+                            <label for="top_no">No</label><br>
+                             <br>
+                            <br>
+
+                           <h5 class="card-title">State</h5>
+
+
+                            <!-- Destination -->
+                            <select name="state" id="state" required="required">
+                                <option value="ca">California</option>
+                                <option value="ny">New York</option>
+                                <option value="ma">Massachusetts</option>
+                                <option value="tx">Texas</option>
+                                <option value="wa">Washington</option>
+                                <option value="co">Colorado</option>
+                                <option value="il">Illinois</option>
+                                <option value="pa">Pennsylvania</option>
+                                <option value="va">Virginia</option>
+                                <option value="ga">Georgia</option>
+                                <option value="Other">Other</option>
+
+                            </select>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+
+
+
+                             <h5 class="card-title">Category</h5>
+                            <select name="category" id="category" required="required">
+                                <option value="software">Software</option>
+                                <option value="web">Web</option>
+                                <option value="mobile">Mobile</option>
+                                <option value="enterprise">Enterprise</option>
+                                <option value="advertising">Advertising</option>
+                                <option value="games_video">Games video</option>
+                                <option value="semiconductor">Semiconductor</option>
+                                <option value="biotech">Biotech</option>
+                                <option value="network_hosting">Network hosting</option>
+                                <option value="hardware">Hardware</option>
+
+                                <option value="Other">Other</option>
+
+                            </select>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+
+
+
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <br>
+            <br>
+            <br>
+
+
+
+
+            <br>
+            <br>
+            <br>
+            <!-- Submit -->
+            <input type="submit" value="Submit" class="btn btn-secondary">
+        </form>
+
+        <br>
+        <br>
+
+        <h3>{{ prediction_texts }}</h3>
+
+
+        <br>
+        <br>
+
+    </div>
+
+
+
+
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,244 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Startup Success Prediction</title>
+
+
+    <!-- BootStrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+
+    <!-- css -->
+    <link rel="stylesheet" href="static/css/styles.css">
+
+
+</head>
+
+<body>
+
+    <!-- As a heading -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">Predict Your First Salary</a>
+            </div>
+        </div>
+    </nav>
+
+    <br><br><br>
+
+
+    <div class="container">
+
+
+
+        <form action="\salary" method="post">
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <!-- Source -->
+                            <h5 class="card-title">Enter the details</h5>
+                            <p>10th Percentage(%)</p>
+                            <input type="number" name="10th" step="any">
+
+                            <p>12th Percentage(%)</p>
+                            <input type="number" name="12th" step="any">
+
+                            <p>Grad Percentage(%)</p>
+                            <input type="number" name="grad" step="any">
+
+                            <p>College Tier(0 or 1)</p>
+                            <input type="number" name="tier">
+
+                            <p>Graduation Year</p>
+                            <input type="number" name="gradyr">
+
+                            <h6>Scores in AMCAT</h6>
+                            <p>English</p>
+                            <input type="number" name="english">
+
+                            <p>Logical</p>
+                            <input type="number" name="logical">
+
+                            <p>Quant</p>
+                            <input type="number" name="quant">
+
+                            <p>Domain</p>
+                            <input type="number" name="domain" step="any">
+
+                             <p>Computer Programming</p>
+                            <input type="number" name="cp">
+
+                             <p>Electronics and Semiconductor</p>
+                            <input type="number" name="ent">
+
+
+
+
+
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                             <h6>Personality Scores:</h6>
+
+                            <p>conscientiousness</p>
+                            <input type="number" name="p1" step="any">
+
+                            <p>agreeableness</p>
+                            <input type="number" name="p2" step="any">
+
+                            <p>extraversion</p>
+                            <input type="number" name="p3" step="any">
+
+                            <p>nueroticism</p>
+                            <input type="number" name="p4" step="any">
+
+                            <p>openess_to_experience</p>
+                            <input type="number" name="p5" step="any">
+
+                            <p>Age</p>
+                            <input type="number" name="age">
+                           <br>
+                            <br>
+                            <p>Gender(male=1/female=0)</p>
+                            <input type="number" name="gender">
+
+                           <br>
+                            <br>
+                           <h5 class="card-title">10th board</h5>
+                            <select name="board1" id="board1" required="required">
+                                <option value="icse">ICSE</option>
+                                <option value="ssc">SSC</option>
+                                <option value="Other">Other</option>
+
+                            </select>
+                              <br>
+                            <br>
+                            <h5 class="card-title">12th board</h5>
+                            <!-- Destination -->
+                            <select name="board2" id="board2" required="required">
+                                <option value="cbse">CBSE</option>
+                                <option value="state_board">State Board</option>
+                                <option value="icse">ICSE</option>
+                                <option value="up">UP Board</option>
+                                <option value="other">Other</option>
+
+
+                            </select>
+                             <br>
+                            <br>
+                            <h5 class="card-title">Specialization</h5>
+                            <!-- Destination -->
+                            <select name="stream" id="stream" required="required">
+                                <option value="electronics and communication engineering">electronics and communication engineering	</option>
+                                <option value="computer science & engineering">computer science & engineering</option>
+                                <option value="information technology">information technology</option>
+                                <option value="computer engineering">computer engineering</option>
+                                <option value="mechanical engineering">mechanical engineering</option>
+                                <option value="electronics and electrical engineering">electronics and electrical engineering</option>
+                                <option value="electronics & telecommunications">electronics & telecommunications</option>
+                                <option value="electrical engineering">electrical engineering</option>
+                                <option value="electronics & instrumentation eng">electronics & instrumentation eng</option>
+                                <option value="other">Other</option>
+
+
+                            </select>
+                             <br>
+                            <br>
+                            <h5 class="card-title">College State</h5>
+                            <!-- Destination -->
+                            <select name="state" id="state" required="required">
+                                <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                <option value="Karnataka">Karnataka</option>
+                                <option value="Tamil Nadu">Tamil Nadu</option>
+                                <option value="Telangana">Telangana</option>
+                                <option value="Maharashtra">Maharashtra</option>
+                                <option value="Andhra Pradesh">Andhra Pradesh</option>
+                                <option value="West Bengal">West Bengal</option>
+                                <option value="Madhya Pradesh">Madhya Pradesh</option>
+                                <option value="Punjab">Punjab</option>
+                                <option value="Haryana">Haryana</option>
+                                <option value="other">Other</option>
+
+
+                            </select>
+                            <br>
+                            <br>
+                             <h5 class="card-title">Degeree</h5>
+                            <!-- Destination -->
+                            <select name="degree" id="degree" required="required">
+                                <option value="M.Sc. (Tech.)">M.Sc. (Tech.)</option>
+                                <option value="M.Tech./M.E.">M.Tech./M.E.</option>
+                                <option value="MCA">MCA</option>
+                                <option value="other">Other</option>
+
+
+                            </select>
+
+
+
+
+
+
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <br>
+            <br>
+            <br>
+
+
+
+
+            <br>
+            <br>
+            <br>
+            <!-- Submit -->
+            <input type="submit" value="Submit" class="btn btn-secondary">
+        </form>
+
+        <br>
+        <br>
+
+        <h3>{{ prediction_texts }}</h3>
+
+
+        <br>
+        <br>
+
+    </div>
+
+
+
+
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
